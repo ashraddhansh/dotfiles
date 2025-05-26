@@ -1,0 +1,10 @@
+theme = "catppuccin-mocha"
+font-family = "Jetbrains Mono NF"
+font-size = 13
+window-padding-x = 15
+window-padding-y = 15
+#custom-shader = ./shaders/bloom.glsl
+confirm-close-surface = false
+
+keybind = alt+t=new_tab
+keybind = alt+w=close_tab

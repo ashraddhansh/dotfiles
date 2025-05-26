@@ -1,0 +1,114 @@
+@import "mocha.css";
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 12pt;
+  font-weight: bold;
+  border-radius: 5px;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+@keyframes blink_red {
+  to {
+    background-color: rgb(242, 143, 173);
+    color: rgb(26, 24, 38);
+  }
+}
+.warning, .critical, .urgent {
+  animation-name: blink_red;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 5;
+  animation-direction: alternate;
+}
+
+.modules-left, .modules-center, .modules-right {
+    opacity: 1;
+    background-color: @base;
+    border-radius: 0.5rem;
+}
+
+window#waybar {
+  background-color: rgba(0, 0, 0, 0);
+}
+window > box {
+  color: @base;
+  background-color: rgba(0, 0, 0, 0);
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#workspaces {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+#workspaces button {
+  padding: 0 10px;
+  border: none;
+  background: transparent;
+  color: rgba(205, 214, 244, 0.4);
+  /* border-bottom: 2px solid @text; */
+}
+#workspaces button.focused {
+  border-bottom: 2px solid @text;
+
+}
+#workspaces button.active {
+  color: @text;
+}
+#workspaces button.urgent {
+  color: @sky;
+}#
+#workspaces button:hover {
+  border-bottom: 2px solid @text;
+}
+#window {
+  padding-right: 10px;
+  padding-left: 0px;
+  color: @text;
+}
+
+#mpd {
+  color: @text;
+}
+tooltip {
+  background: rgb(48, 45, 65);
+}
+tooltip label {
+  color: rgb(217, 224, 238);
+}
+#custom-launcher {
+  padding-left: 15px;
+  padding-right: 15px;
+  color: rgb(201, 203, 255);
+}
+#mode, #memory, #temperature,#cpu,#mpd, #temperature, #backlight, #pulseaudio, #network, #battery, #custom-powermenu, #custom-notification {
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+#clock {
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+}
+#idle_inhibitor {
+  padding-right: 10px;
+  padding-left: 5px;
+}
+/* #mode { */
+/* 	margin-left: 10px; */
+/* 	background-color: rgb(248, 189, 150); */
+/*     color: rgb(26, 24, 38); */
+/* } */
+#memory, #cpu, #clock, #idle_inhibitor, #temperature, #backlight, #pulseaudio, #network, #network.disconnected, #tray ,#battery.charging, #battery.full, #battery.discharging {
+  color: @text;
+}
+#battery.critical:not(.charging) {
+  color: rgb(242, 143, 173);
+}
+#tray {
+  padding-right: 8px;
+  padding-left: 10px;
+}

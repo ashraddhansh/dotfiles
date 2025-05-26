@@ -1,0 +1,115 @@
+@import "mocha.css";
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 11pt;
+  font-weight: bold;
+  border-radius: 5px;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+@keyframes blink_red {
+  to {
+    background-color: rgb(242, 143, 173);
+    color: rgb(26, 24, 38);
+  }
+}
+.warning, .critical, .urgent {
+  animation-name: blink_red;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 5;
+  animation-direction: alternate;
+}
+
+.modules-left, .modules-center, .modules-right {
+    opacity: 1;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 0.5rem;
+    padding: 0px;
+}
+
+window#waybar {
+  background-color: rgba(0, 0, 0, 0);
+}
+window > box {
+  color: @base;
+  background-color: rgba(0, 0, 0, 0);
+}
+#workspaces {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+#workspaces button {
+  padding-top: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 2px;
+  color: @text;
+}
+#workspaces button.focused {
+  background-color: @text;
+  padding-left: 8px;
+  padding-right: 8px;
+  color: @sky;
+}
+#workspaces button.active {
+  background: @sky;
+  padding-left: 8px;
+  padding-right: 8px;
+  color: @surface0;
+  animation: ws_normal 20s ease-in-out 1;
+}
+#workspaces button.urgent {
+  color: rgb(26, 24, 38);
+}
+#workspaces button:hover {
+  background-color: @text;
+  color: @base;
+}
+#window {
+  padding-right: 0px;
+  padding-left: 0px;
+  color: @text;
+}
+tooltip {
+  background: rgb(48, 45, 65);
+}
+tooltip label {
+  color: rgb(217, 224, 238);
+}
+#custom-launcher {
+  padding-left: 15px;
+  padding-right: 15px;
+  color: rgb(201, 203, 255);
+}
+#mode, #memory, #temperature,#cpu,#mpd, #temperature, #backlight, #pulseaudio, #network, #battery, #custom-powermenu, #custom-notification {
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+#clock {
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+#idle_inhibitor {
+  padding-right: 15px;
+  padding-left: 10px;
+}
+/* #mode { */
+/* 	margin-left: 10px; */
+/* 	background-color: rgb(248, 189, 150); */
+/*     color: rgb(26, 24, 38); */
+/* } */
+#memory, #cpu, #clock, #idle_inhibitor, #temperature, #backlight, #pulseaudio, #network, #network.disconnected, #tray ,#battery.charging, #battery.full, #battery.discharging {
+  color: @text;
+}
+#battery.critical:not(.charging) {
+  color: rgb(242, 143, 173);
+}
+#tray {
+  padding-right: 8px;
+  padding-left: 10px;
+}
