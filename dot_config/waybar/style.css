@@ -1,7 +1,7 @@
 @import "mocha.css";
 * {
   font-family: "JetBrainsMono Nerd Font";
-  font-size: 12pt;
+  font-size: 11pt;
   font-weight: bold;
   border-radius: 5px;
   transition-property: background-color;
