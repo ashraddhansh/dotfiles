@@ -4,7 +4,6 @@
   "mod": "dock",
   "modules-left": [
     "hyprland/workspaces",
-    "hyprland/window",
   ],
   "modules-center": [
     "clock",

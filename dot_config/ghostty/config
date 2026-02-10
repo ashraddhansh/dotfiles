@@ -1,4 +1,4 @@
-theme = "catppuccin-mocha"
+theme = Catppuccin Mocha
 font-family = "Jetbrains Mono NF"
 font-size = 13
 window-padding-x = 15

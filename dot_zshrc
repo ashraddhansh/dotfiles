@@ -107,7 +107,7 @@ eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 date
 bindkey -v
-export PATH=$HOME/Developer/ascii-countdown/dist/:$HOME/.local/scripts/:$HOME/go/bin/:$PATH
+export PATH=$HOME/Developer/github.com/ascii-countdown/dist/:$HOME/.local/scripts/:$HOME/go/bin/:$PATH
 bindkey '^ ' autosuggest-accept
 export EDITOR="nvim"
 
