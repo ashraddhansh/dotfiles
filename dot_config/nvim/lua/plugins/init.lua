@@ -14,55 +14,57 @@ return {
   },
   {
     "echasnovski/mini.surround",
-    version = false;
+    version = false,
     config = function()
-    require('mini.surround').setup()
+      require("mini.surround").setup()
     end,
   },
 
   {
     "rust-lang/rust-analyzer",
-    require'lspconfig'.rust_analyzer.setup{
-    settings = {
-    ['rust-analyzer'] = {
-      diagnostics = {
-        enable = true;
-      }
-    }
-  }
-}
+    require("lspconfig").rust_analyzer.setup {
+      settings = {
+        ["rust-analyzer"] = {
+          diagnostics = {
+            enable = true,
+          },
+        },
+      },
+    },
   },
   {
-  'chomosuke/typst-preview.nvim',
-  lazy = false, -- or ft = 'typst'
-  version = '1.*',
-  opts = {
-      open_cmd = "firefox %s"
+    "chomosuke/typst-preview.nvim",
+    lazy = false, -- or ft = 'typst'
+    version = "1.*",
+    opts = {
+      open_cmd = "firefox %s",
     }, -- lazy.nvim will implicitly calls `setup {}`
   },
-  
 
   {
-      'tjdevries/present.nvim'
+    "tjdevries/present.nvim",
   },
 
   {
-  	"nvim-treesitter/nvim-treesitter",
-  	opts = {
-  		ensure_installed = {
-  			"vim", "lua", "vimdoc",
-       "html", "css", "rust"
-  		},
-  	},
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+        "rust",
+      },
+    },
   },
   {
-  "lervag/vimtex",
-  lazy = false,     -- we don't want to lazy load VimTeX
-  -- tag = "v2.15", -- uncomment to pin to a specific release
-  init = function()
-    -- VimTeX configuration goes here, e.g.
-    vim.g.vimtex_view_method = "zathura"
-  end
-  }
+    "lervag/vimtex",
+    lazy = false, -- we don't want to lazy load VimTeX
+    -- tag = "v2.15", -- uncomment to pin to a specific release
+    init = function()
+      -- VimTeX configuration goes here, e.g.
+      vim.g.vimtex_view_method = "zathura"
+    end,
+  },
 }
-  

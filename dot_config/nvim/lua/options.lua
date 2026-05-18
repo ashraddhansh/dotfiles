@@ -1,6 +1,5 @@
 require "nvchad.options"
 
-
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "tex", "typst", "markdown" },
   callback = function()
@@ -12,8 +11,10 @@ vim.api.nvim_create_autocmd("FileType", {
 -- vim.opt.spelllang = 'en_us'
 -- vim.opt.spell = true
 
-
 -- add yours here!
+vim.api.nvim_create_user_command("RemoveStyles", function()
+  vim.cmd [[%s/\s*style=['"][^'"]*['"]//g]]
+end, {})
 
 -- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!
