@@ -66,7 +66,7 @@ vim.lsp.config("tinymist", {
 	capabilities = capabilities,
 })
 
-vim.lsp.enable({ "lua_ls", "pyright", "tinymist" })
+vim.lsp.enable({ "lua_ls", "pyright", "tinymist", "gopls" })
 
 require("autocmds")
 require("snippets")
