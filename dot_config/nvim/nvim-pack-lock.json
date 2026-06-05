@@ -1,0 +1,36 @@
+{
+  "plugins": {
+    "blink.cmp": {
+      "rev": "d2c4d170ad51e5116da7b19f2426f3b6e318161d",
+      "src": "https://github.com/saghen/blink.cmp"
+    },
+    "blink.lib": {
+      "rev": "b127d48bf8e9ac9cf41f6e0fbead317503f76558",
+      "src": "https://github.com/saghen/blink.lib"
+    },
+    "cmp-nvim-lsp": {
+      "rev": "cbc7b02bb99fae35cb42f514762b89b5126651ef",
+      "src": "https://github.com/hrsh7th/cmp-nvim-lsp"
+    },
+    "mini.nvim": {
+      "rev": "cbae4fa396bbf9c802b3d2dc2e9c5362e8fb9468",
+      "src": "https://github.com/nvim-mini/mini.nvim"
+    },
+    "mini.pick": {
+      "rev": "34fdef3b0966974378c4f39e3ddb54ffc628fbe9",
+      "src": "https://github.com/echasnovski/mini.pick"
+    },
+    "nvim": {
+      "rev": "0303a7208dba448c459767486a38a6ec05c4216b",
+      "src": "https://github.com/catppuccin/nvim"
+    },
+    "nvim-cmp": {
+      "rev": "a1d504892f2bc56c2e79b65c6faded2fd21f3eca",
+      "src": "https://github.com/hrsh7th/nvim-cmp"
+    },
+    "nvim-lspconfig": {
+      "rev": "229b79051b380377664edc4cbd534930154921a1",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    }
+  }
+}
