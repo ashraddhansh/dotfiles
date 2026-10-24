@@ -17,6 +17,9 @@ vim.pack.add({
 	{ src = "https://github.com/echasnovski/mini.pick" },
 	{ src = "https://github.com/saghen/blink.lib" },
 	{ src = "https://github.com/nvim-mini/mini.nvim" },
+	{ src = "https://github.com/chomosuke/typst-preview.nvim" },
+	{ src = "https://forge.barrettruth.com/barrettruth/live-server.nvim" },
+	{ src = "https://github.com/rafamadriz/friendly-snippets" },
 
 })
 
@@ -32,6 +35,13 @@ vim.keymap.set('n', '<leader>ff', ":Pick files<CR>")
 vim.keymap.set('n', '<leader>fg', ":Pick grep_live<CR>")
 vim.keymap.set('n', '<leader>b', ":Pick buffers <CR>")
 
+require 'typst-preview'.setup {
+  open_cmd = 'firefox %s',
+}
+vim.g.live_server = {
+  port = 8080,
+  browser = false,
+}
 
 require("blink.cmp").setup({
   keymap = {
@@ -66,7 +76,11 @@ vim.lsp.config("tinymist", {
 	capabilities = capabilities,
 })
 
-vim.lsp.enable({ "lua_ls", "pyright", "tinymist", "gopls" })
+
+
+vim.lsp.enable({ "lua_ls", "pyright", "tinymist", "gopls", "html", "cssls","ts_ls", "emmet_language_server" })
+
+
 
 require("autocmds")
 require("snippets")

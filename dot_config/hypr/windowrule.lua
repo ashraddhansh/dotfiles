@@ -26,11 +26,11 @@ hl.window_rule({
 -- 	opacity = "0.8",
 -- })
 
--- hl.window_rule({
--- 	name = "nautilus-opacity",
--- 	match = { class = "org.gnome.Nautilus" },
--- 	opacity = "0.8",
--- })
+hl.window_rule({
+	name = "nautilus-opacity",
+	match = { class = "org.gnome.Nautilus" },
+	opacity = "0.8",
+})
 
 hl.window_rule({
 	name = "calender-opacity",
@@ -40,7 +40,7 @@ hl.window_rule({
 
 hl.window_rule({
 	name = "obsidian-opacity",
-	match = { class = "obsidian" },
+	match = { class = "md.obsidian.Obsidian" },
 	opacity = "0.8",
 })
 

@@ -3,7 +3,7 @@ hl.config({
 		layout = "master",
 		gaps_in = 4,
 		gaps_out = 8,
-		border_size = 2,
+		border_size = 0,
 		col = {
 
 			active_border = { colors = { "rgba(ca9ee6ff)", "rgba(f2d5cfff)" }, angle = 45 },
@@ -17,6 +17,7 @@ hl.config({
 		rounding = 10,
 		blur = {
 			enabled = true,
+			-- variant = "frost",
 			size = 20,
 			passes = 3,
 			special = true,

@@ -19,6 +19,8 @@ alias ld='eza -lhD --icons=auto' # long list dirs
 alias lt='eza --icons=auto --tree' # list folder as tree
 
 fish_add_path ~/.local/My-Scripts-and-Tools/
+fish_add_path ~/go/bin
+fish_add_path ~/.npm-global/bin
 
 
 function y
@@ -31,3 +33,6 @@ function y
 end
 
 set -gx EDITOR nvim
+
+# Added by vibez installer
+fish_add_path ~/.local/bin

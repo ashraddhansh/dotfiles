@@ -43,6 +43,7 @@ hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("MOZ_ENABLE_WAYLAND", "1")
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 hl.env("NVD_BACKEND", " direct")
+hl.env("GDK_WAYLAND_DISABLE", "ext_background_effect_manager_v1")
 
 -- █░░ ▄▀█ █▄█ █▀█ █░█ ▀█▀ █▀
 -- █▄▄ █▀█ ░█░ █▄█ █▄█ ░█░ ▄█
@@ -57,8 +58,9 @@ hl.config({
 hl.config({
 	misc = {
 		initial_workspace_tracking = 0,
+		disable_hyprland_logo = true,
 		disable_splash_rendering = true,
-		focus_on_activate = true,
+		focus_on_activate = false,
 	},
 })
 
@@ -97,6 +99,7 @@ hl.gesture({
 hl.config({
   cursor = {
     no_hardware_cursors = 0,
+	zoom_factor = 1.0
 
   },
 })

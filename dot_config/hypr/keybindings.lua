@@ -47,6 +47,10 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(" hyprctl hyprsunset gamma -10"
 hl.bind("F10", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
 hl.bind("F9", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
 
+
+hl.bind("CTRL + F11", hl.dsp.pass({ window = [[class:com\.obsproject\.Studio]] }))
+hl.bind("CTRL + F12", hl.dsp.pass({ window = [[class:com\.obsproject\.Studio]] }))
+
 -- Media Control
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
