@@ -80,7 +80,39 @@ vim.lsp.config("tinymist", {
 
 vim.lsp.enable({ "lua_ls", "pyright", "tinymist", "gopls", "html", "cssls","ts_ls", "emmet_language_server" })
 
+-- Persistent undo
+vim.opt.undofile = true
+vim.opt.undolevels = 10000
 
+-- Persistent registers, marks and history
+vim.opt.shada = "!,'1000,<1000,s100,h"
+
+-- Save cursor position and folds
+vim.opt.viewoptions = { "cursor", "folds" }
+
+local group = vim.api.nvim_create_augroup("PersistentView", {
+  clear = true,
+})
+
+vim.api.nvim_create_autocmd("BufWinLeave", {
+  group = group,
+  pattern = "*",
+  callback = function()
+    if vim.bo.buftype == "" and vim.fn.expand("%") ~= "" then
+      vim.cmd("silent! mkview")
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufWinEnter", {
+  group = group,
+  pattern = "*",
+  callback = function()
+    if vim.bo.buftype == "" and vim.fn.expand("%") ~= "" then
+      vim.cmd("silent! loadview")
+    end
+  end,
+})
 
 require("autocmds")
 require("snippets")
