@@ -180,5 +180,16 @@ require("bufferline").setup({
 vim.keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<CR>")
 vim.keymap.set("n", "<S-h>", "<cmd>BufferLineCyclePrev<CR>")
 
+-- split terminal
+vim.keymap.set("n", "<leader>v", function()
+  vim.cmd("botright 12split")
+  vim.cmd("terminal")
+  vim.cmd("startinsert")
+end, { desc = "Open terminal (12 lines)" })
+
+vim.opt.laststatus = 3
+
+
 require("autocmds")
 require("snippets")
+require("splitterm")
