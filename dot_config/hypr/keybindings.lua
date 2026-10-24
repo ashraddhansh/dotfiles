@@ -2,6 +2,7 @@ local terminal = "kitty"
 local network = "kitty -e nvim"
 local tmux = "kitty -e tmux -u"
 local notes = "obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland"
+local openProject = "kitty --class=\"openProject\" -e \"$HOME/.local/My-Scripts-and-Tools/tmux-session-dispensary.sh\""
 local fileManager = "nautilus -w"
 local browser = "zen"
 local browserTwo = "firefox --new-window"
@@ -18,6 +19,7 @@ hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(tmux))
 hl.bind(mainMod .. " + F3", hl.dsp.exec_cmd(network))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(browserTwo))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(openProject))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd(notes))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(clipboard))

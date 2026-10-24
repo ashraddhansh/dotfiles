@@ -103,3 +103,14 @@ hl.window_rule({
 	move = { 705, 210 },
 	size = { 540, 720 },
 })
+
+
+-- tmux open projects
+hl.window_rule({
+	name = "tmux-open-projects",
+	match = { class = "openProject"},
+	float = true,
+	move = { 705, 210 },
+	size = { 540, 540 },
+	opacity = "0.8",
+})
