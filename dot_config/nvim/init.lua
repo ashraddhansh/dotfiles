@@ -154,6 +154,18 @@ require("mini.pick").setup({
   },
 })
 
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, {
+  desc = "Go to definition",
+})
+
+vim.keymap.set("n", "gr", vim.lsp.buf.references, {
+  desc = "Find references",
+})
+
+vim.keymap.set("n", "K", vim.lsp.buf.hover, {
+  desc = "Hover documentation",
+})
+
 -- bufferline
 require("bufferline").setup({
   options = {
