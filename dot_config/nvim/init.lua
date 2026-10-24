@@ -14,12 +14,14 @@ vim.pack.add({
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/saghen/blink.cmp" },
 	{ src = "https://github.com/echasnovski/mini.pick" },
-	{ src = "https://github.com/echasnovski/mini.pick" },
 	{ src = "https://github.com/saghen/blink.lib" },
+	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
+	{ src = "https://github.com/akinsho/bufferline.nvim" },
 	{ src = "https://github.com/nvim-mini/mini.nvim" },
 	{ src = "https://github.com/chomosuke/typst-preview.nvim" },
 	{ src = "https://forge.barrettruth.com/barrettruth/live-server.nvim" },
 	{ src = "https://github.com/rafamadriz/friendly-snippets" },
+	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 
 })
 
@@ -80,6 +82,17 @@ vim.lsp.config("tinymist", {
 
 vim.lsp.enable({ "lua_ls", "pyright", "tinymist", "gopls", "html", "cssls","ts_ls", "emmet_language_server" })
 
+-- gitsigns config 
+require("gitsigns").setup({
+  signs = {
+    add = { text = "+" },
+    change = { text = "~" },
+    delete = { text = "_" },
+    topdelete = { text = "‾" },
+    changedelete = { text = "~" },
+  },
+})
+
 -- Persistent undo
 vim.opt.undofile = true
 vim.opt.undolevels = 10000
@@ -113,6 +126,47 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
     end
   end,
 })
+
+-- linter settings
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  severity_sort = true,
+})
+
+-- mini-pick settings
+require("mini.pick").setup({
+  window = {
+    config = function()
+      local height = math.floor(0.618 * vim.o.lines)
+      local width = math.floor(0.618 * vim.o.columns)
+
+      return {
+        anchor = "NW",
+        height = height,
+        width = width,
+        row = math.floor(0.5 * (vim.o.lines - height)),
+        col = math.floor(0.5 * (vim.o.columns - width)),
+        border = "rounded",
+      }
+    end,
+  },
+})
+
+-- bufferline
+require("bufferline").setup({
+  options = {
+    mode = "buffers",
+    diagnostics = "nvim_lsp",
+    separator_style = "thin",
+    show_buffer_close_icons = false,
+    show_close_icon = false,
+    always_show_bufferline = true,
+  },
+})
+vim.keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<CR>")
+vim.keymap.set("n", "<S-h>", "<cmd>BufferLineCyclePrev<CR>")
 
 require("autocmds")
 require("snippets")
